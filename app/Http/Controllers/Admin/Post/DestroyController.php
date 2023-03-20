@@ -10,7 +10,7 @@ class DestroyController extends BaseController
 {
     public function __invoke(Post $post)
     {
-        $post->delete();
+        $this->service->destroy($post);
         return redirect()->route('admin.post.index');
     }
 }

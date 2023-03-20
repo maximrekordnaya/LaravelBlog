@@ -2,7 +2,7 @@
 @section('content')
 
     <main class="blog-post">
-        <div class="container">
+        <div class="container mb-5">
             <h1 class="edica-page-title aos-init aos-animate" data-aos="fade-up">{{$post->title}}</h1>
             <p class="edica-blog-post-meta aos-init aos-animate" data-aos="fade-up"
                data-aos-delay="200">{{$date->translatedFormat('F j, Y')}}</p>

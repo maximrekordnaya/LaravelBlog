@@ -37,7 +37,7 @@
                             <tr>
                                 <td>{{$comment->id}}</td>
                                 <td>{{$comment->message}}</td>
-                                <td class="text-center"><a href="{{route('admin.category.show', $comment->id)}}"
+                                <td class="text-center"><a href="{{route('post.show', $comment->post_id)}}"
                                                            class="text-info"><i class="fas fa-eye"></i></a></td>
                                 <td class="text-center"><a href="{{route('personal.comment.edit', $comment->id)}}"
                                                            class="text-success"><i class="fas fa-pen"></i></a></td>

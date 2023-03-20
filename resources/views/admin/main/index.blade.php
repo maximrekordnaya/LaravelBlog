@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('content')
-    <div class="row mt-3">
+    <div class="row pt-3">
         <div class="col-12 col-sm-6 col-md-3">
             <a href="{{route('admin.user.index')}}" class="aaa">
                 <div class="info-box">

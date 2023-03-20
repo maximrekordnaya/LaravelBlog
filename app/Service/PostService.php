@@ -3,7 +3,9 @@
 namespace App\Service;
 
 use App\Models\Post;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use mysql_xdevapi\Exception;
 
@@ -65,6 +67,25 @@ class PostService
             abort(500);
         }
         return $post;
+
+    }
+
+    public function destroy($post){
+        $preview_image_path = $post->preview_image;
+        $main_image_path = $post->main_image;
+
+
+        $post->comments()->delete();
+        $post->tags()->detach();
+        try {
+            $post->delete();
+        }catch(QueryException $exception){
+            Log::error($exception->getMessage());
+            abort(500, 'Ошибка удаления поста');
+        }
+        Storage::disk('public')->delete($preview_image_path);
+        Storage::disk('public')->delete($main_image_path);
+
 
     }
 }

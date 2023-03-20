@@ -7247,7 +7247,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .edica-footer {
   background-color: #191919;
-  padding-top: 200px;
+  padding-top: 95px;
   margin-top: -93px;
   padding-bottom: 56px;
   color: #ffffff; }
@@ -7626,7 +7626,7 @@ a.text-dark:hover, a.text-dark:focus {
         display: block; }
 
 .blog .blog-post {
-  margin-bottom: 119px; }
+  margin-bottom: 50px; }
   .blog .blog-post .blog-post-thumbnail-wrapper {
     height: 265px;
     position: relative;

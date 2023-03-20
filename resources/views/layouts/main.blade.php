@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edica :: Home</title>
+    <title>:: Blog ::</title>
     <link rel="stylesheet" href="{{asset('assets/vendors/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/font-awesome/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/aos/aos.css')}}">
@@ -16,10 +16,11 @@
 </head>
 <body>
 <div class="edica-loader"></div>
-<header class="edica-header">
-    <div class="container">
+<header class="edica-header blog">
+    <div class="container blog">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="{{route('post.index')}}"><img src="{{asset('assets/images/logo.svg')}}" alt="Edica"></a>
+            <a class="navbar-brand" href="{{route('post.index')}}"><img src="{{asset('assets/images/logo.svg')}}"
+                                                                        alt="Edica"></a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#edicaMainNav"
                     aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,10 +31,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('post.index')}}">Блог</a>
                     </li>
-
-
                 </ul>
-
                 <ul class="navbar-nav mt-2 mt-lg-0">
                     @auth()
                         <li class="nav-item ">
@@ -46,10 +44,16 @@
                                 <a class="nav-link" href="{{route('admin.main.index')}}">Админка</a>
                             </li>
                         @endif
+                        <li class="nav-item ">
+                            <form action="{{route('logout')}}" method="POST">
+                                @csrf
+                                <input type="submit" value="Вийти" class="btn btn-logout">
+                            </form>
+
+                        </li>
                     @endauth
 
                     @guest()
-
 
                         <li class="nav-item">
                             <a class="nav-link p-0 pr-2" href="{{route('personal.main.index')}}">
@@ -72,44 +76,47 @@
         <nav class="navbar navbar-expand-lg navbar-light p-0">
             <div class="collapse navbar-collapse" id="edicaMainNav">
                 <ul class="navbar-nav mx-auto mt-0 mt-lg-0">
-                    @foreach($categories as $category)
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('category.post.index', $category->id)}}">{{$category->title}}</a>
-                        </li>
-                    @endforeach
-
-
+                    <div class="row">
+                        @foreach($categories as $category)
+                            <div class="col-3 text-center m-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       href="{{route('category.post.index', $category->id)}}">{{$category->title}}</a>
+                                </li>
+                            </div>
+                        @endforeach
+                    </div>
 
                 </ul>
             </div>
         </nav>
-
-
     </div>
+
+    <div class="decor">
+        <div class="decor-item decor-color-one item-1 anim-1"></div>
+        <div class="decor-item decor-color-two item-2 anim-2"></div>
+        <div class="decor-item decor-color-three item-3 anim-3"></div>
+
+        <div class="decor-item decor-color-two item-4 anim-1"></div>
+        <div class="decor-item decor-color-three item-5 anim-2"></div>
+        <div class="decor-item decor-color-one item-6 anim-3"></div>
+
+        {{--        <div class="decor-item decor-color-yellow item-7"></div>--}}
+        <div class="decor-item decor-color-one item-8 anim-2"></div>
+        <div class="decor-item decor-color-two item-9 anim-3"></div>
+    </div>
+
 </header>
 
 
 @yield('content')
 
 
-<section class="edica-footer-banner-section">
-    <div class="container">
-        <div class="footer-banner" data-aos="fade-up">
-            <h1 class="banner-title">Проект у портфоліо</h1>
-{{--            <div class="banner-btns-wrapper">--}}
-{{--                <button class="btn btn-success"><img src="{{asset('assets/images/apple@1x.svg')}}" alt="ios"--}}
-{{--                                                     class="mr-2"> App Store--}}
-{{--                </button>--}}
-{{--                <button class="btn btn-success"><img src="{{asset('assets/images/android@1x.svg')}}" alt="android"--}}
-{{--                                                     class="mr-2"> Google Play--}}
-{{--                </button>--}}
-{{--            </div>--}}
-            <p class="banner-text">Максима Шелкоуса</p>
-        </div>
+<footer class="edica-footer mt-3" data-aos="fade-up">
+    <div class="container footer-banner" data-aos="fade-up">
+        <h1 class="banner-title">Проект у портфоліо</h1>
+        <p class="banner-text">Максима Шелкоуса</p>
     </div>
-</section>
-<footer class="edica-footer" data-aos="fade-up">
-
 </footer>
 <script src="{{asset('assets/vendors/popper.js/popper.min.js')}}"></script>
 <script src="{{asset('assets/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>

@@ -3,11 +3,16 @@
 
 
     <main class="blog">
-        <div class="container">
+        <div class="container min-height-container">
             <h1 class="edica-page-title" data-aos="fade-up">Блог</h1>
             <section class="featured-posts-section">
                 <div class="row">
                     @php $post_counter = 0; @endphp
+                    @if($posts->count() == 0)
+                        <div class="col">
+                        <h2 class="text-center">Постів немає</h2>
+                        </div>
+                    @else
                     @foreach($posts as $post)
                         <div class="col-6 blog-post" data-aos="fade-up">
                             <div class="blog-post-thumbnail-wrapper">
@@ -55,6 +60,7 @@
 
                         @endphp
                     @endforeach
+                    @endif
 
                 </div>
                 <div class="row">

@@ -1,17 +1,19 @@
-@extends('layouts.main');
+@extends('layouts.main')
 @section('content')
-    ;
 
-    <main class="blog">
+
+    <main class="blog blog-post">
         <div class="container">
             <h1 class="edica-page-title" data-aos="fade-up">Блог</h1>
             <section class="featured-posts-section">
-                <div class="row">
+                <div class="row mb-5">
                     @php $post_counter = 0; @endphp
                     @foreach($posts as $post)
-                        <div class="col-6 blog-post" data-aos="fade-up">
+                        <div class="col-sm-12 col-md-6 col-ld-6 blog-post" data-aos="fade-up">
                             <div class="blog-post-thumbnail-wrapper">
+                                <a href="{{route('post.show', $post->id)}}">
                                 <img src="storage/{{$post->preview_image}}" alt="blog post">
+                                </a>
                             </div>
                             <p class="blog-post-category">{{$post->category->title}}</p>
                             <div class="row">
@@ -58,7 +60,7 @@
 
                 </div>
                 <div class="row">
-                    <div class="mx-auto" style="margin-top: -80px;">
+                    <div class="mx-auto" style="margin-top: -50px;">
                         {{$posts->links()}}
                     </div>
                 </div>
@@ -75,7 +77,9 @@
 
                                 <div class="col-md-6 blog-post" data-aos="fade-up">
                                     <div class="blog-post-thumbnail-wrapper">
+                                        <a href="{{route('post.show', $post->id)}}">
                                         <img src="storage/{{$post->preview_image}}" alt="blog post">
+                                        </a>
                                     </div>
                                     <p class="blog-post-category">{{$post->category->title}}</p>
                                     <div class="row">
