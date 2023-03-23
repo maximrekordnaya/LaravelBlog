@@ -1,9 +1,11 @@
 Что бы запустить:
- 1. composer install
- 2. npm install
- 3. php artisan migrate
- 4. php artisan db:seed
- 5. раскомментировать 2 строки кода в AppServiceProvider
+ 1. создать файл .enw
+ 2. composer install
+ 3. npm install
+ 4. php artisan key:generate
+ 5. php artisan migrate
+ 6. php artisan db:seed
+ 7. раскомментировать 2 строки кода в AppServiceProvider
  
  Проблема:
     На локальной разработки картинки хорошо отображались, но при скачивании проекта с gitHub все работает как нужно, но сами картинки не выводятся
