@@ -28,8 +28,9 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrapFour();
         Carbon::setLocale('uk_UA.utf8');
-        $categories = Category::where('title', '!=', Category::UNCATEGORIZES_TITLE)->get();
-        view()->share(compact('categories'));
+        //раскоментировать
+//        $categories = Category::where('title', '!=', Category::UNCATEGORIZES_TITLE)->get();
+//        view()->share(compact('categories'));
 
 
 
