@@ -5,7 +5,9 @@
  4. php artisan key:generate
  5. php artisan migrate
  6. php artisan db:seed
- 7. раскомментировать 2 строки кода в AppServiceProvider
+ 7. php artisan storage:link
+ 8. раскомментировать 2 строки кода в AppServiceProvider
+ 9.php artisan serve
  
  Проблема:
     На локальной разработки картинки хорошо отображались, но при скачивании проекта с gitHub все работает как нужно, но сами картинки не выводятся
