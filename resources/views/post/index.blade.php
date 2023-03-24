@@ -12,7 +12,7 @@
                         <div class="col-sm-12 col-md-6 col-ld-6 blog-post" data-aos="fade-up">
                             <div class="blog-post-thumbnail-wrapper">
                                 <a href="{{route('post.show', $post->id)}}">
-                                <img src="storage/{{$post->preview_image}}" alt="blog post">
+                                <img src="{{asset('storage/' .$post->preview_image)}}" alt="blog post - you can add img">
                                 </a>
                             </div>
                             <p class="blog-post-category">{{$post->category->title}}</p>
@@ -78,7 +78,7 @@
                                 <div class="col-md-6 blog-post" data-aos="fade-up">
                                     <div class="blog-post-thumbnail-wrapper">
                                         <a href="{{route('post.show', $post->id)}}">
-                                        <img src="storage/{{$post->preview_image}}" alt="blog post">
+                                        <img src="{{asset('storage/' .$post->preview_image)}}" alt="blog post- you can add img">
                                         </a>
                                     </div>
                                     <p class="blog-post-category">{{$post->category->title}}</p>
@@ -122,7 +122,7 @@
                             @foreach($posts_liked as $post)
                                 <li class="post">
                                     <a href="{{route('post.show', $post->id)}}" class="post-permalink media">
-                                        <img src="storage/{{$post->preview_image}}" alt="blog post">
+                                        <img src="{{asset('storage/' .$post->preview_image)}}" alt="blog post-you can add img">
                                         <div class="media-body">
                                             <div class="row">
                                                 <h6 class="post-title ml-3">{{$post->title}}</h6>

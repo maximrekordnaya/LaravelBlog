@@ -6,6 +6,7 @@ use App\Models\Category;
 use Carbon\Carbon;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
+use mysql_xdevapi\Exception;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,10 +29,14 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrapFour();
         Carbon::setLocale('uk_UA.utf8');
-        //раскоментировать
-//        $categories = Category::where('title', '!=', Category::UNCATEGORIZES_TITLE)->get();
-//        view()->share(compact('categories'));
 
+        try {
+            //раскоментировать
+//            $categories = Category::where('title', '!=', Category::UNCATEGORIZES_TITLE)->get();
+//            view()->share(compact('categories'));
+        }catch(\Exception $ex){
+//            return view('errors.error404');
+        }
 
 
     }

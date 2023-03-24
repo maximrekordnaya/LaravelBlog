@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 
-    <main class="blog-post">
+    <main class="blog-post blog">
         <div class="container mb-5">
             <h1 class="edica-page-title aos-init aos-animate" data-aos="fade-up">{{$post->title}}</h1>
             <p class="edica-blog-post-meta aos-init aos-animate" data-aos="fade-up"
